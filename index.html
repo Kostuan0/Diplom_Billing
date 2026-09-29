@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Вход в личный кабинет</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_login.css') }}" />
+ </head>
+ <body>
+
+<div class="form-wrapper">
+  <h1>Личный кабинет</h1>
+
+  <form method="POST" action="{{url_for('login')}}">
+      <p>{{msg}}</p>
+  <label for="username">Имя пользователя:</label>
+  <input type="text" id="username" name="username"><br><br>
+
+  <label for="password">Пароль:</label>
+  <input type="password" id="password" name="password"><br><br>
+
+
+  <input type="submit" value="Войти">
+</form>
+</div>
+
+</body>
+</html>

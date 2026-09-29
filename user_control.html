@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Управление аккаунтом</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+JdjnKELlZARGEn8AZkhDnP6sFExnDl"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_user_control.css') }}" />
+</head>
+<body>
+<div class="container">
+    <h1>Управление аккаунтом пользователя</h1>
+    <form action="{{url_for('user_info')}}">
+        <input type="submit" value="Информация о пользователе">
+        </form>
+        <form action="{{url_for('tariff_info')}}">
+        <input type="submit" value="Тарифы">
+        </form>
+        <form action="{{url_for('user_operations')}}">
+        <input type="submit" value="Операции">
+        </form>
+        <form action="{{url_for('user_control')}}">
+        <input type="submit" value="Управление аккаунтом">
+        </form>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Текущий тариф</h2>
+            <p><strong>Название:</strong> Стандартный</p>
+            <p><strong>Цена за месяц:</strong> 500 руб.</p>
+            <button type="button" class="btn btn-primary btn-modal">
+            <a href="#openModalTariff">Сменить тариф</a>
+            </button>
+        </div>
+
+        <div class="col-md-6">
+
+            <div id="openModalTariff" class="modal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title">Выберите тариф</h3>
+                    <a href="#close" title="Close" class="close">×</a>
+                  </div>
+                  <div class="modal-body">
+                    <div class="modal-body">
+                  <div class="tariff">
+                    <h4>Тариф "Стандартный"</h4>
+                    <p>500 руб. в месяц</p>
+                    <button class="choose-btn">Выбрать "Стандартный"</button>
+                  </div>
+                  <div class="tariff">
+                    <h4>Тариф "Оптимальный"</h4>
+                    <p>1000 руб. в месяц</p>
+                    <button class="choose-btn">Выбрать "Оптимальный"</button>
+                  </div>
+                  <div class="tariff">
+                    <h4>Тариф "Сверскоростной"</h4>
+                    <p>1500 руб. в месяц</p>
+                    <button class="choose-btn">Выбрать "Сверхскоростной"</button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+
+
+
+            </div>
+    </div>
+</div>
+</body>
+
+</html>

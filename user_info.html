@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+    <title>Личный кабинет</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_info_user.css') }}" />
+    </head>
+    <body>
+    <div class="container">
+        <h1>Личный кабинет пользователя</h1>
+        <form action="{{url_for('user_info')}}">
+        <input type="submit" value="Информация о пользователе">
+        </form>
+        <form action="{{url_for('tariff_info')}}">
+        <input type="submit" value="Тарифы">
+        </form>
+        <form action="{{url_for('user_operations')}}">
+        <input type="submit" value="Операции">
+        </form>
+        <form action="{{url_for('user_control')}}">
+        <input type="submit" value="Управление аккаунтом">
+        </form>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Информация о пользователе</h2>
+                <p><strong>Логин:</strong> {{record['USER_LOGIN']}}</p>
+                <p><strong>Имя:</strong> {{record['USER_NAME']}}</p>
+                <p><strong>Почта:</strong> {{record['USER_MAIL']}}</p>
+                <p><strong>Название тарифного плана:</strong> {{'TARIFF_NAME'}}</p>
+                <p><strong>Номер договора:</strong> {{record['CONTRACT_NUMBER']}}</p>
+                <p><strong>Цена тарифа за месяц:</strong> {{record['TARIFF_PRICE_PER_MONTH']}} руб.</p>
+                <p><strong>Баланс:</strong> {{record['USER_BALANCE']}} руб.</p>
+                <p><strong>IP:</strong> {{record['USER_IP']}}</p>
+                </div>
+            </div>
+        </div>
+    <button type="button" class="btn btn-primary btn-modal">
+        <a href="{{url_for('logout')}}"> Выйти из аккаунта </a>
+    </button>
+
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Тарифы</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_info_tariff.css') }}" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<h1>Тарифы</h1>
+		<form action="{{url_for('user_info')}}">
+        <input type="submit" value="Информация о пользователе">
+        </form>
+        <form action="{{url_for('tariff_info')}}">
+        <input type="submit" value="Тарифы">
+        </form>
+        <form action="{{url_for('user_operations')}}">
+        <input type="submit" value="Операции">
+        </form>
+        <form action="{{url_for('user_control')}}">
+        <input type="submit" value="Управление аккаунтом">
+        </form>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="tariff">
+					<h2>Тариф «Стандартный»</h2>
+					<p>Если у вас мало устройств одновременно выходят в сеть и вам не нужна большая скорость.</p>
+					<p>Стоимость: <span class="price">500 рублей в месяц</span></p>
+					<p>Скорость: <span class="speed">до 30 Мбит/сек</span></p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="tariff">
+					<h2>Тариф «Оптимальный»</h2>
+					<p>Если ваши близкие любят посидеть в Интернете, а вам не хочется отвлекаться на это.</p>
+					<p>Стоимость: <span class="price1">750 рублей в месяц</span></p>
+					<p>Скорость: <span class="speed1">до 50 Мбит/сек</span></p>
+				</div>
+			</div>
+            <div class="col-md-4">
+				<div class="tariff">
+					<h2>Тариф «Сверхскоростной»</h2>
+					<p>Огромное количество контента без задержки, даже если сеть нагружается множеством устройств.</p>
+					<p>Стоимость: <span class="price2">1000 рублей в месяц</span></p>
+					<p>Скорость: <span class="speed2">до 150 Мбит/сек</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
